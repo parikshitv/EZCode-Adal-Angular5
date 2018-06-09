@@ -1,21 +1,22 @@
 {
-  "name": "ezcode-adal-angular5",
-  "version": "1.0.9",
+  "name": "ezcode-adal-angular5-usertenantselect",
+  "version": "1.0.10",
   "license": "MIT",
   "author": {
-    "name": "Frank Chen",
-    "email": "chentao76@hotmail.com"
+    "name": "PMaluchuru",
+    "email": "32571071+pmaluchuru@users.noreply.github.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/frankchen76/EZCode-Adal-Angular5.git"
+    "url": "https://github.com/pmaluchuru/EZCode-Adal-Angular5.git"
   },
   "keywords": [
     "Angular",
     "Angular5",
     "adal",
     "AAD",
-    "NPM"
+    "NPM",
+    "Multi Tenant"
   ],
   "scripts": {
     "ng": "ng",
