@@ -7,7 +7,7 @@ import { AccesstokenCallbackComponent } from './accesstoken-callback.component';
 import { EZCodeHttpInterceptor } from './ezcode-http.interceptor';
 import { IEZCodeAdalConfig } from './IEZCodeAdalConfig';
 import { EZCodeAdalService } from './ezcode-adal.service';
-import { EZCodeAdalConfig } from './ezcode-adalconfig.service';
+import { EZCodeAdalConfigs } from './ezcode-adalconfig.service';
 import { EZCodeAdalComponentGuard } from './ezcode-adal-component.guard';
 import { EZCodeAdalCallbackGuard } from './ezcode-adal-callback.guard';
 
@@ -28,7 +28,7 @@ import { EZCodeAdalCallbackGuard } from './ezcode-adal-callback.guard';
         ],
         EZCodeAdalComponentGuard,
         EZCodeAdalCallbackGuard,
-        EZCodeAdalConfig,
+        EZCodeAdalConfigs,
         EZCodeAdalService
     ]
 })
@@ -39,11 +39,11 @@ export class EZCodeAdalModule {
             'CoreModule is already loaded. Import it in the AppModule only');
         }
     }
-    static forRoot(config: EZCodeAdalConfig): ModuleWithProviders {
+    static forRoot(config: EZCodeAdalConfigs): ModuleWithProviders {
         return {
           ngModule: EZCodeAdalModule,
           providers: [
-            {provide: EZCodeAdalConfig, useValue: config }
+            {provide: EZCodeAdalConfigs, useValue: config }
           ]
         };
       }

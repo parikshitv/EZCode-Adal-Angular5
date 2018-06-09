@@ -1,9 +1,11 @@
 
-export interface IEZCodeAdalConfig{
-    tenant: string;
-    clientId: string;
-    redirectUri: string;
-    postLogoutRedirectUri: string;
-    cacheLocation?: "localStorage" | "sessionStorage";
-    endpoints: any;
+export interface IEZCodeAdalConfig {
+  tenant: string;
+  tenantId: string;
+  clientId: string;
+  redirectUri: string;
+  extraQueryParameter: string;
+  postLogoutRedirectUri: string;
+  cacheLocation?: "localStorage" | "sessionStorage";
+  endpoints: any;
 }
