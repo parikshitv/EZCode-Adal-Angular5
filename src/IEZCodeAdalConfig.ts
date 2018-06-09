@@ -4,5 +4,6 @@ export interface IEZCodeAdalConfig{
     clientId: string;
     redirectUri: string;
     postLogoutRedirectUri: string;
+    cacheLocation?: "localStorage" | "sessionStorage";
     endpoints: any;
 }

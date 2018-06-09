@@ -22,7 +22,7 @@
     ],
     "files": [
         "./node_modules/@types/core-js/index.d.ts",
-        "./node_modules/@types/adal/index.d.ts",
+        "./node_modules/@types/adal-angular/index.d.ts",
         "./node_modules/rxjs/Rx.d.ts"
     ],
     "angularCompilerOptions": {

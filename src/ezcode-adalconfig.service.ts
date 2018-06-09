@@ -9,5 +9,6 @@ export class EZCodeAdalConfig implements IEZCodeAdalConfig
     clientId: string;
     redirectUri: string;
     postLogoutRedirectUri: string;
+    cacheLocation?: "localStorage" | "sessionStorage";
     endpoints: any;
 }

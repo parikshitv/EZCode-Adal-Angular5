@@ -1,6 +1,6 @@
 {
   "name": "ezcode-adal-angular5",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "author": {
     "name": "Frank Chen",
@@ -43,7 +43,6 @@
     "@angular/router": "^5.2.0",
     "adal-angular": "^1.0.17",
     "core-js": "^2.4.1",
-    "expose-loader": "^0.7.5",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
@@ -51,7 +50,7 @@
     "@angular/cli": "~1.7.3",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
-    "@types/adal": "^1.0.29",
+    "@types/adal-angular": "^1.0.1",
     "@types/core-js": "^0.9.46",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
@@ -73,7 +72,7 @@
     "typescript": "~2.5.3"
   },
   "bundledDependencies": [
-    "@types/adal",
+    "@types/adal-angular",
     "adal-angular"
   ]
 }
