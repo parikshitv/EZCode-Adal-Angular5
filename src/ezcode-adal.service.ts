@@ -14,11 +14,11 @@ import { IEZCodeAdalConfig } from '.';
 export class EZCodeAdalService {
 
   private context: AuthenticationContext;
-  private CACHE_DELIMETER: string = '||';
-  private tenantKey: string = 'tenant';
+  private CACHE_DELIMETER = '||';
+  private tenantKey = 'tenant';
 
-  constructor(private configs: EZCodeAdalConfigs, private tenant: string) {
-    this.saveItem(this.tenantKey, tenant, true);
+  constructor(private configs: EZCodeAdalConfigs) {
+    // this.saveItem(this.tenantKey, tenant, true);
     this.context = new AuthenticationContext(this.getConfigTenantBased(this.tenantKey));
   }
   public set adalConfig(tenant: string) {
@@ -26,14 +26,23 @@ export class EZCodeAdalService {
     this.context.config = this.getConfigTenantBased(this.tenantKey);
   }
 
-  getConfigTenantBased(tenantKey: string) : IEZCodeAdalConfig {
+  getConfigTenantBased(tenantKey: string): IEZCodeAdalConfig {
     let tenant = this.getItem(tenantKey);
-    for (var i = 0; i < this.configs.adalconfigs.length; i++) {
+    for (let i = 0; i < this.configs.adalconfigs.length; i++) {
       if (tenant === this.configs.adalconfigs[i].tenant) {
         return this.configs.adalconfigs[i];
       }
     }
+    //   if (localStorage.getItem(tenantKey) !== null) {
+    //     let tenant = localStorage.getItem(tenantKey);
+    //   for (let i = 0; i < this.configs.adalconfigs.length; i++) {
+    //     if (tenant === this.configs.adalconfigs[i].tenant) {
+    //       return this.configs.adalconfigs[i];
+    //     }
+    //   }
+    // }
   }
+
   login() {
     this.context.login();
   }
@@ -87,6 +96,7 @@ export class EZCodeAdalService {
   ): void {
     this.context.acquireTokenPopup(resource, extraQueryParameters, claims, callback);
   }
+
   /**
    * Acquires token (interactive flow using a redirect) by sending request to AAD to obtain a new token. In this case the callback passed in the authentication request constructor will be called.
    * @param resource Resource URI identifying the target resource.
@@ -114,7 +124,7 @@ export class EZCodeAdalService {
       if (!this.supportsLocalStorage()) {
         console.log('Local storage is not supported');
       } else if (preserve) {
-        var value = this.getItem(key) || '';
+        let value = this.getItem(key) || '';
         localStorage.setItem(key, value + obj + this.CACHE_DELIMETER);
       } else {
         localStorage.setItem(key, obj);
